@@ -29,11 +29,11 @@ NS_LOG_COMPONENT_DEFINE ("Lab_1");
 
 int main (int argc, char *argv[])
 {
-  LogComponentEnable ("UdpClientApplication", LOG_LEVEL_INFO);
-  LogComponentEnable ("UdpServerApplication", LOG_LEVEL_INFO);
+  LogComponentEnable ("UdpClient", LOG_LEVEL_INFO);
+  LogComponentEnable ("UdpServer", LOG_LEVEL_INFO);
 
   std::string delay = "20ms";
-  std::string rate = "5Mbps; // Data rate in bps";
+  std::string rate = "5Mbps"; // Data rate in bps;
   double interval = 0.05;
 
   CommandLine cmd;
