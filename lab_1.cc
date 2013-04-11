@@ -32,9 +32,9 @@ int main (int argc, char *argv[]){
     LogComponentEnable ("UdpClient", LOG_LEVEL_INFO);
     LogComponentEnable ("UdpServer", LOG_LEVEL_INFO);
 
-    std::string delay = "20ms";
+    std::string delay = "20ms"; // Latency in ms
     std::string rate = "5Mbps"; // Data rate in bps;
-    double interval = 0.05;
+    double interval = 0.05; // Packet Interval in seconds
 
     CommandLine cmd;
     cmd.AddValue ("Delay", "P2P Delay/Latency of Link (string format ex: 20ms)", delay);
