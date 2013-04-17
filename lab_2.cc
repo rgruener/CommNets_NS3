@@ -200,7 +200,7 @@ int main (int argc, char *argv[])
 {
   std::string lat = "2ms";
   std::string rate = "500kb/s"; // P2P link
-  bool enableFlowMonitor = false;
+  bool enableFlowMonitor = true;
 
 
   CommandLine cmd;
