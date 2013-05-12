@@ -37,5 +37,5 @@ for i in range(0,len(cwnds)):
     xlabel('Time (seconds)')
     title('Command Window Size vs. Time')
 
-savefig("graph_2.png",dpi=72)
+savefig("graph.png",dpi=72)
 show()

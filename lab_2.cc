@@ -46,7 +46,7 @@ class LabTwoApplication: public Application{
         void StartApplication();
         void StopApplication();
 
-        void ScheduleTransaction();
+        void SchedulePackets();
         void SendPacket();
 
         Ptr<Socket> socket; // Ptr is ns3 class for pointers
@@ -100,11 +100,11 @@ void LabTwoApplication::SendPacket(){
     this->socket->Send(newPacket);
 
     if (++this->numPacketsSent < this->numPackets){
-        this->ScheduleTransaction();
+        this->SchedulePackets();
     }
 }
 
-void LabTwoApplication::ScheduleTransaction(){
+void LabTwoApplication::SchedulePackets(){
     if (this->isRunning){
         Time nextTime(Seconds(this->packetSize*8/static_cast<double>(this->dataRate.GetBitRate())));
         this->sendEvent = Simulator::Schedule(nextTime, &LabTwoApplication::SendPacket, this);
@@ -137,7 +137,7 @@ int main (int argc, char *argv[]){
 
     // Settings To Change TCP variant
     //Config::SetDefault("ns3::TcpL4Protocol::SocketType", StringValue("ns3::TcpNewReno"));
-    //std::cout << "TCP New Reno" << std::endl;
+    std::cout << "Standard TCP" << std::endl;
 
     CommandLine cmd;
     cmd.AddValue ("Delay", "P2P Delay/Latency of Link (string format ex: 2ms", delay);
