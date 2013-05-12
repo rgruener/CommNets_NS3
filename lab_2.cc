@@ -135,6 +135,10 @@ int main (int argc, char *argv[]){
     std::string rate = "500kb/s"; // P2P link
     bool enableFlowMonitor = true; // Packet Interval in seconds
 
+    // Settings To Change TCP variant
+    //Config::SetDefault("ns3::TcpL4Protocol::SocketType", StringValue("ns3::TcpNewReno"));
+    //std::cout << "TCP New Reno" << std::endl;
+
     CommandLine cmd;
     cmd.AddValue ("Delay", "P2P Delay/Latency of Link (string format ex: 2ms", delay);
     cmd.AddValue ("DataRate", "P2P Data Rate (string format ex: 500kb/s)", rate);
